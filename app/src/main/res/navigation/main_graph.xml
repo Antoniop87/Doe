@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="br.com.doe.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/splashFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="br.com.doe.ui.auth.loginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_recuperarContaFragment"
+            app:destination="@id/recuperarContaFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_criarContaFragment"
+            app:destination="@id/criarContaFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/loginFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/criarContaFragment"
+        android:name="br.com.doe.ui.auth.CriarContaFragment"
+        android:label="fragment_criar_conta"
+        tools:layout="@layout/fragment_criar_conta" >
+        <action
+            android:id="@+id/action_criarContaFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/loginFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/recuperarContaFragment"
+        android:name="br.com.doe.ui.auth.RecuperarContaFragment"
+        android:label="fragment_recuperar_conta"
+        tools:layout="@layout/fragment_recuperar_conta" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="br.com.doe.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+</navigation>
